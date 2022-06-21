@@ -1,0 +1,21 @@
+// Colors
+$bodyBg: hsl(216, 12%, 8%);
+
+$desaturatedRed: hsl(0, 36%, 70%);
+$softRed: hsl(0, 93%, 68%);
+
+$white: hsl(0, 0%, 100%);
+
+$darkGrayishRed: hsl(0, 6%, 24%);
+// - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+// - Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+
+//Attribution
+$attr_text-color: hsl(248, 32%, 49%);
+$attr_grifano-color: #fff;
+$attr_span: hsl(249, 10%, 26%);
+
+// Typeface
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+$fontFamily: "Josefin Sans", sans-serif;
+$mainFontSize: 16px;
