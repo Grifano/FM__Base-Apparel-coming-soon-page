@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution]()
-- Live Site URL: [Live](???)
+- Live Site URL: [Live](https://grifano.github.io/FM__Base-Apparel-coming-soon-page/)
 
 ## My process
 
@@ -51,7 +51,18 @@ Users should be able to:
 
 ### What I learned
 
-???
+As I have two different sizes of images, I decide to add images depending on the screen size. I find the answer at [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) And the srcset and size attribute can help me with this. The desktop version should be rendered at any size, not less than 375px. Then, the mobile version should be generated instead. How cool is that 😁?
+
+```html
+<div class="sign-up__img">
+  <img
+    srcset="./images/hero-mobile.jpg 375w, ./images/hero-desktop.jpg 610w"
+    sizes="(max-width: 375px) 375px, 610px"
+    src="./images/hero-desktop.jpg"
+    alt=""
+  />
+</div>
+```
 
 ```css
 ???

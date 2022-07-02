@@ -3,7 +3,9 @@ html {
 }
 // Full size webpage
 body {
-  background-color: $bodyBg;
+  background-image: url("../images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: $fontFamily;
   height: 100vh;
   box-sizing: border-box;
@@ -15,24 +17,6 @@ body {
     height: 100%;
   }
 }
-// Components center
-// body {
-//   background-color: $bodyBg;
-//   font-family: $fontFamily;
-//   min-height: 100vh;
-//   box-sizing: border-box;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   main {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 100%;
-//     flex-grow: 1;
-//   }
-// }
 
 // Attribution to author and Frontend Mentor platform
 .attribution {
@@ -75,9 +59,11 @@ body {
 
 // Container
 .container {
-  padding: 32px;
+  max-width: 445px - 24px;
+  padding: 12px;
+  margin-left: 165px;
   @media (max-width: 375px) {
-    padding: 24px;
+    padding: 32px;
   }
 }
 
@@ -85,41 +71,4 @@ body {
 .show {
   visibility: visible;
   opacity: 100%;
-}
-.tooltip {
-  visibility: hidden;
-  opacity: 0;
-  width: 80%;
-  position: absolute;
-  top: -70%;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0px 4px 8px rgba(124, 135, 152, 0.2);
-  transition: all 0.3s ease 0s;
-  &__msg {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 19px;
-    padding: 12px 24px;
-    background: $bodyBg;
-    border-radius: 15px;
-    text-align: center;
-    color: $white;
-    outline: none;
-    border-style: none;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -10px;
-      border-width: 10px;
-      border-style: solid;
-      border-color: $bodyBg transparent transparent transparent;
-    }
-  }
 }
