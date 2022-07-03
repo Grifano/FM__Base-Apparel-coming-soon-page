@@ -42,34 +42,103 @@ Users should be able to:
 
 ### Built with
 
-<!-- - Semantic HTML5 markup
+- Semantic HTML5 markup
 - CSS custom properties
 - SASS/SCSS
 - JavaScript
+- Regular Expressions
+- Grid CSS
 - Flexbox
-- Responsive Web Design -->
+- Responsive Web Design
 
 ### What I learned
 
-As I have two different sizes of images, I decide to add images depending on the screen size. I find the answer at [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) And the srcset and size attribute can help me with this. The desktop version should be rendered at any size, not less than 375px. Then, the mobile version should be generated instead. How cool is that 😁?
+I try to implement the Grid CSS with grid-template-areas. But what is the good practice for that? I am not sure about using aside tag for picture... and maybe I had to remove this "page-container" and setup the grid on tag body instead?
 
 ```html
-<div class="sign-up__img">
-  <img
-    srcset="./images/hero-mobile.jpg 375w, ./images/hero-desktop.jpg 610w"
-    sizes="(max-width: 375px) 375px, 610px"
-    src="./images/hero-desktop.jpg"
-    alt=""
-  />
-</div>
+<body>
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo"><img src="./images/logo.svg" alt="" /></a>
+      </div>
+    </header>
+    <main class="sign-up">
+      <div class="container">
+        <h1 class="sign-up__title">We're <strong>coming soon</strong></h1>
+        <p class="sign-up__subtitle">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form action="#" class="sign-up__form" id="signUpForm" novalidate>
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email Address"
+            pattern="^[a-zA-Z]+@[a-zA-Z.-]+\.[a-z]{2,4}$"
+          />
+          <button type="submit"></button>
+        </form>
+        <small id="errorMsg">Please provide a valid email</small>
+      </div>
+    </main>
+    <aside>
+      <img
+        srcset="./images/hero-mobile.jpg 375w, ./images/hero-desktop.jpg 610w"
+        sizes="(max-width: 769px) 375"
+        src="./images/hero-desktop.jpg"
+        alt=""
+      />
+    </aside>
+  </div>
+  <script src="./js/script.js"></script>
+</body>
 ```
+
+Ok, so Grid Css... OMG! I discover amazing features grid-template-areas. There is still a lot to understand with Grid CSS for me, but this grid-area is really great for building layout.
+P.S: Also, Autoprefixer doesn't want to work correctly with grid-area... I had to figure out this because this warning is really annoying...
 
 ```css
-???
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr minmax(375px, 610px);
+  grid-template-areas:
+    "header aside"
+    "main aside"
+    "main aside";
+}
+header {
+  grid-area: header;
+}
+.sign-up {
+  grid-area: main;
+}
+aside {
+  grid-area: aside;
+}
 ```
 
+In this challenge, I decide to implement validation only through JS. That's why I use novalidate attribute to disable HTML validation, and focused on JS. Using the Regex and test method I check if the email is corresponding to the regex pattern and when the method return true form will be submitted. In other ways, I prevent the form submission and add the class show to the prepared element with the error message.
+
 ```js
-???
+const form = document.getElementById("signUpForm");
+const email = document.getElementById("email");
+const errorMsg = document.getElementById("errorMsg");
+const regex = /^[a-zA-Z]+@[a-zA-Z.-]+.[a-z]{2,4}$/;
+
+form.addEventListener("submit", (e) => {
+  const isValid = regex.test(email.value);
+
+  if (isValid) {
+    e.submit();
+  } else {
+    e.preventDefault();
+    errorMsg.className = "show";
+  }
+});
 ```
 
 ### Continued development

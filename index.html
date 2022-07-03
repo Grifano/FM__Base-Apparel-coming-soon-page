@@ -34,14 +34,13 @@
             store. Add your email below to stay up-to-date with announcements
             and our launch deals.
           </p>
-          <form action="#" class="sign-up__form" id="signUpForm">
+          <form action="#" class="sign-up__form" id="signUpForm" novalidate>
             <label for="email">Email</label>
             <input
               type="email"
               name="email"
               id="email"
               placeholder="Email Address"
-              title="Please provide a valid email address"
               pattern="^[a-zA-Z]+@[a-zA-Z.-]+\.[a-z]{2,4}$"
             />
             <button type="submit"></button>
@@ -59,7 +58,7 @@
       </aside>
     </div>
     <!-- Attribution. Author name -->
-    <div style="display: none" class="attribution">
+    <div class="attribution">
       <p class="attribution__text">
         <span class="attribution__by">Challenge by</span>
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"

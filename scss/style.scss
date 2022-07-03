@@ -53,7 +53,7 @@ header {
       font-weight: 600;
       line-height: 71px;
     }
-    @media (max-width: 769px) {
+    @media (max-width: 825px) {
       font-size: 40px;
       line-height: 42px;
       letter-spacing: 10.8254px;
@@ -67,7 +67,7 @@ header {
     font-size: 16px;
     line-height: 28px;
     margin-bottom: 40px;
-    @media (max-width: 769px) {
+    @media (max-width: 825px) {
       line-height: 22px;
       font-size: 14px;
       margin-bottom: 32px;
@@ -141,14 +141,14 @@ header {
     }
     margin-bottom: 8px;
   }
-  @media (max-width: 769px) {
+  @media (max-width: 825px) {
     text-align: center;
   }
 }
 aside {
   grid-area: aside;
   overflow: hidden;
-  @media (max-width: 769px) {
+  @media (max-width: 825px) {
     height: 66.667vw;
   }
   img {
