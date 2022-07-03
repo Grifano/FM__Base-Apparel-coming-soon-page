@@ -6,10 +6,5 @@ const regex = /^[a-zA-Z]+@[a-zA-Z.-]+.[a-z]{2,4}$/;
 form.addEventListener("submit", (e) => {
   const isValid = regex.test(email.value);
 
-  if (isValid) {
-    e.submit();
-  } else {
-    e.preventDefault();
-    errorMsg.className = "show";
-  }
+  isValid ? e.submit() : e.preventDefault(), (errorMsg.className = "show");
 });
