@@ -220,6 +220,21 @@ body {
   opacity: 100%;
 }
 
+small {
+  display: block;
+  color: #f96262;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 20px;
+  text-align: left;
+  letter-spacing: 0.15000000596046448px;
+  padding-left: 24px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  opacity: 0;
+  visibility: hidden;
+}
+
 .page-wrapper {
   min-height: 100vh;
   display: -ms-grid;
@@ -322,6 +337,7 @@ header img {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  margin-bottom: 8px;
 }
 
 .sign-up__form label {
