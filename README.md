@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution]()
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/base-apparel-coming-soon-page-using-javascript-validation-and-css-grid-gJ2GLjFmVp)
 - Live Site URL: [Live](https://grifano.github.io/FM__Base-Apparel-coming-soon-page/)
 
 ## My process
@@ -86,16 +86,23 @@ I try to implement the Grid CSS with grid-template-areas. But what is the good p
       </div>
     </main>
     <aside>
-      <img
-        srcset="./images/hero-mobile.jpg 375w, ./images/hero-desktop.jpg 610w"
-        sizes="(max-width: 769px) 375"
-        src="./images/hero-desktop.jpg"
-        alt=""
-      />
+      <picture>
+        <source srcset="./images/hero-mobile.jpg" media="(max-width: 825px)" />
+        <img src="./images/hero-desktop.jpg" alt="Women looking passion" />
+      </picture>
     </aside>
   </div>
   <script src="./js/script.js"></script>
 </body>
+```
+
+What about images? I find this [Guide to the Responsive Images Syntax in HTML](https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/#using-picture) it helped me to figure out these images. I had to render the different images depending on the viewport. Now I know how to do this 😁
+
+```html
+<picture>
+  <source srcset="./images/hero-mobile.jpg" media="(max-width: 825px)" />
+  <img src="./images/hero-desktop.jpg" alt="Women looking passion" />
+</picture>
 ```
 
 Ok, so Grid Css... OMG! I discover amazing features grid-template-areas. There is still a lot to understand with Grid CSS for me, but this grid-area is really great for building layout.

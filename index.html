@@ -51,12 +51,13 @@
         </div>
       </main>
       <aside>
-        <img
-          srcset="./images/hero-mobile.jpg 375w, ./images/hero-desktop.jpg 610w"
-          sizes="(max-width: 769px) 375"
-          src="./images/hero-desktop.jpg"
-          alt=""
-        />
+        <picture>
+          <source
+            srcset="./images/hero-mobile.jpg"
+            media="(max-width: 825px)"
+          />
+          <img src="./images/hero-desktop.jpg" alt="Women looking passion" />
+        </picture>
       </aside>
     </div>
     <!-- Attribution. Author name -->
