@@ -30,31 +30,44 @@
       <section class="sign-up">
         <div class="sign-up__grid">
           <div class="sign-up__grid-item">
-            <div class="container">
-              <h1 class="sign-up__title">We're <strong>coming soon</strong></h1>
-              <p class="sign-up__title">
-                Hello fellow shoppers! We're currently building our new fashion
-                store. Add your email below to stay up-to-date with
-                announcements and our launch deals.
-              </p>
+            <div class="sign-up__text-content">
+              <div class="container">
+                <h1 class="sign-up__title">
+                  We're <strong>coming soon</strong>
+                </h1>
+                <p class="sign-up__subtitle">
+                  Hello fellow shoppers! We're currently building our new
+                  fashion store. Add your email below to stay up-to-date with
+                  announcements and our launch deals.
+                </p>
+                <form action="#" class="sign-up__form" id="signUpForm">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email Address"
+                    title="Please provide a valid email address"
+                    pattern="^[a-zA-Z]+@[a-zA-Z.-]+\.[a-z]{2,4}$"
+                  />
+                  <button type="submit"></button>
+                </form>
+              </div>
             </div>
           </div>
           <div class="sign-up__grid-item">
-            <div class="sign-up__img">
-              <img
-                srcset="
-                  ./images/hero-mobile.jpg  375w,
-                  ./images/hero-desktop.jpg 610w
-                "
-                sizes="(max-width: 375px) 375px, 610px"
-                src="./images/hero-desktop.jpg"
-                alt=""
-              />
-            </div>
+            <img
+              srcset="
+                ./images/hero-mobile.jpg  375w,
+                ./images/hero-desktop.jpg 610w
+              "
+              sizes="(max-width: 375px) 375px, 610px"
+              src="./images/hero-desktop.jpg"
+              alt=""
+            />
           </div>
         </div>
       </section>
-      Email Address
     </main>
     <!-- <footer class="footer">
       <div class="container"></div>
