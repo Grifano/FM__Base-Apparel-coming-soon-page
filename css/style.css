@@ -269,6 +269,7 @@ header {
 }
 
 header a {
+  font-size: 0;
   display: block;
 }
 
@@ -419,6 +420,7 @@ header img {
 }
 
 .sign-up__form button {
+  font-size: 0;
   margin-left: -100px;
   background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
   border-radius: 28px;
