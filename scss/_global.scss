@@ -5,18 +5,8 @@ html {
 body {
   font-family: $fontFamily;
   box-sizing: border-box;
-  overflow: hidden;
   background: $gradient1;
-}
-header {
-  position: absolute;
-  width: 100%;
-  top: 75px;
-  left: 0;
-  a {
-    display: block;
-    max-width: 810px;
-  }
+  height: 100%;
 }
 
 // Attribution to author and Frontend Mentor platform
@@ -69,7 +59,6 @@ header {
     background-color: #0061cc;
   }
 }
-
 // Container
 .container {
   max-width: 445px;
@@ -79,7 +68,6 @@ header {
   //   padding: 32px;
   // }
 }
-
 // UI control
 .show {
   visibility: visible;

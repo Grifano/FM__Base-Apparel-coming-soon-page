@@ -141,20 +141,8 @@ body {
   font-family: "Josefin Sans", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  overflow: hidden;
   background: linear-gradient(135deg, white, #fff5f5);
-}
-
-header {
-  position: absolute;
-  width: 100%;
-  top: 75px;
-  left: 0;
-}
-
-header a {
-  display: block;
-  max-width: 810px;
+  height: 100%;
 }
 
 .attribution {
@@ -232,45 +220,60 @@ header a {
   opacity: 100%;
 }
 
-.sign-up {
-  color: #ce9797;
-  height: 100vh;
-}
-
-.sign-up__grid {
-  height: 100%;
+.page-wrapper {
+  min-height: 100vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr minmax(375px, 610px);
       grid-template-columns: 1fr minmax(375px, 610px);
+      grid-template-areas: "header aside" "main aside" "main aside";
+  background: url("../images/bg-pattern-desktop.svg") left/cover no-repeat;
 }
 
-.sign-up__grid-item:first-child {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-image: url("../images/bg-pattern-desktop.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
+@media (max-width: 825px) {
+  .page-wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 84px 0.5fr 1fr;
+        grid-template-rows: 84px 0.5fr 1fr;
+        grid-template-areas: "header" "aside" "main";
+    background: linear-gradient(150.03deg, #ffffff 0%, #fff4f4 84.51%);
+  }
 }
 
-.sign-up__grid-item img {
-  width: 100%;
-  height: 100%;
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+}
+
+header a {
   display: block;
+}
+
+@media (max-width: 475px) {
+  header a {
+    max-width: 100px;
+  }
+}
+
+header img {
+  display: block;
+  max-width: 100%;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.sign-up__text-content {
-  min-width: 100%;
+.sign-up {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ce9797;
 }
 
 .sign-up__title {
@@ -288,10 +291,30 @@ header a {
   line-height: 71px;
 }
 
+@media (max-width: 769px) {
+  .sign-up__title {
+    font-size: 40px;
+    line-height: 42px;
+    letter-spacing: 10.8254px;
+    margin-bottom: 16px;
+  }
+  .sign-up__title strong {
+    line-height: 42px;
+  }
+}
+
 .sign-up__subtitle {
   font-size: 16px;
   line-height: 28px;
   margin-bottom: 40px;
+}
+
+@media (max-width: 769px) {
+  .sign-up__subtitle {
+    line-height: 22px;
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
 }
 
 .sign-up__form {
@@ -363,7 +386,14 @@ header a {
 .sign-up__form input:invalid {
   outline-color: #f96262;
   color: #f96262;
-  background: url("../images/icon-error.svg") top 50% right 132px no-repeat;
+  background: url("../images/icon-error.svg") top 50% right 72px no-repeat;
+}
+
+@media (max-width: 769px) {
+  .sign-up__form input {
+    font-size: 14px;
+    padding: 7px 88px 7px 24px;
+  }
 }
 
 .sign-up__form button {
@@ -379,8 +409,9 @@ header a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
   min-height: 56px;
-  min-width: 100px;
+  width: 100px;
   border-style: none;
   -webkit-box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
           box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
@@ -399,10 +430,40 @@ header a {
   }
 }
 
-.sign-up img {
-  display: block;
-  max-width: 100%;
+@media (max-width: 769px) {
+  .sign-up__form button {
+    width: 64px;
+    min-height: 48px;
+    margin-left: -64px;
+  }
+}
+
+@media (max-width: 769px) {
+  .sign-up {
+    text-align: center;
+  }
+}
+
+aside {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  grid-area: aside;
+  overflow: hidden;
+}
+
+@media (max-width: 769px) {
+  aside {
+    height: 66.667vw;
+  }
+}
+
+aside img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
+  -o-object-position: top left;
+     object-position: top left;
 }
